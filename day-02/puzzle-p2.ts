@@ -36,7 +36,7 @@ function parseInput(file: string): Game[] {
 }
 
 function minCubesForGame(game: Game): Round {
-    let minCubes: Round = { red: 0, green: 0, blue: 0 };
+    const minCubes: Round = { red: 0, green: 0, blue: 0 };
 
     for (const round of game.rounds) {
         minCubes.red = Math.max(minCubes.red, round.red);

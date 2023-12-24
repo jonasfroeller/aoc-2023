@@ -1,5 +1,5 @@
-const readline = require('readline');
-const { exec } = require('child_process');
+import readline from 'readline';
+import { exec } from 'child_process';
 
 const rl = readline.createInterface({
     input: process.stdin,

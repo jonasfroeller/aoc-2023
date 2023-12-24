@@ -36,10 +36,10 @@ function processLine(line, logging = true) {
   let charactersBeforeFirstDigit = line.substring(0, positionOfFirstDigit); 
   let charactersAfterLastDigit = line.substring(positionOfLastDigit, line.length); // -1 => ""
   const digitsSpelledOut = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-  let firstDigitsSpelledOut = charactersBeforeFirstDigit ? (charactersBeforeFirstDigit.match(new RegExp(`${digitsSpelledOut.join('|')}`, "g")) ?? 0) : 0;
-  let lastDigitsSpelledOut = charactersAfterLastDigit ? (charactersAfterLastDigit.match(new RegExp(`${digitsSpelledOut.join('|')}`, "g")) ?? 0) : 0;
-  let firstDigitSpelledOut = firstDigitsSpelledOut[0] ?? "zero";
-  let lastDigitSpelledOut = lastDigitsSpelledOut[0] ?? "zero";
+  const firstDigitsSpelledOut = charactersBeforeFirstDigit ? (charactersBeforeFirstDigit.match(new RegExp(`${digitsSpelledOut.join('|')}`, "g")) ?? 0) : 0;
+  const lastDigitsSpelledOut = charactersAfterLastDigit ? (charactersAfterLastDigit.match(new RegExp(`${digitsSpelledOut.join('|')}`, "g")) ?? 0) : 0;
+  const firstDigitSpelledOut = firstDigitsSpelledOut[0] ?? "zero";
+  const lastDigitSpelledOut = lastDigitsSpelledOut[0] ?? "zero";
 
   if (firstDigitSpelledOut != 0 && lastDigitSpelledOut != 0) { // only try if there are spelled out digits
     // check if spelled out digit is farther away than digit
